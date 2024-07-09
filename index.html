@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gokaraju Rangaraju College - Mechanical Engineering Department</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #283593;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        header img {
+            max-height: 80px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+        #dynamic-text {
+            font-size: 1.8em;
+            color: #283593;
+            margin-top: 20px;
+        }
+        .experiment-section {
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+        .experiment-heading {
+            font-size: 2em;
+            color: #283593;
+            margin-bottom: 30px;
+        }
+        .experiment-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .experiment-buttons button {
+            width: 100px;
+            height: 100px;
+            background-color: #283593;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .experiment-buttons button:hover {
+            background-color: #1a237e;
+            transform: scale(1.1);
+        }
+        .experiment-image {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 1s;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .experiment-image img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (min-width: 768px) {
+            .experiment-image img {
+                max-width: 30%;
+            }}
+    </style>
+    <!-- Include Typed.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <header>
+        <img src="https://www.griet.ac.in/images/GRIET_Logo.png" alt="GRIET Logo">
+    </header>
+    <div id="dynamic-text" class="text">Thermal Engineering Lab</div>
+    <div class="experiment-section">
+        <h2 class="experiment-heading">Experiments</h2>
+        <div class="experiment-buttons" id="experiment-buttons">
+            <!-- Buttons for experiments will be inserted here -->
+        </div>
+    </div>
+    <div class="experiment-image" id="experiment-image">
+        <!-- Images will be inserted here -->
+    </div>
+
+    <script>
+        // Dynamic text change
+        var typed = new Typed(".text", {
+            strings: ["Mechanical", "G-Lob","22241A0345","22241A0344","22241A0343"],
+            typeSpeed: 50, // Slower typing speed
+            backSpeed: 50, // Slower backspacing speed
+            backDelay: 1000,
+            loop: true
+        });
+        // Typed.js animation
+        
+        // Show experiment buttons
+        function showExperiments() {
+            const experimentButtonsDiv = document.getElementById("experiment-buttons");
+            experimentButtonsDiv.innerHTML = ''; // Clear existing buttons
+
+            for (let i = 1; i <= 14; i++) {
+                let button = document.createElement("button");
+                button.innerText = i;
+                button.onclick = function() { showExperimentImage(i); };
+                experimentButtonsDiv.appendChild(button);
+            }
+        }
+
+        function showExperimentImage(experimentNumber) {
+            const experimentImageDiv = document.getElementById("experiment-image");
+            experimentImageDiv.innerHTML = ''; // Clear previous images
+
+            if (experimentNumber === 1) {
+                // Assuming the images for experiment 1 are named experiment1_1.png, experiment1_2.png
+                let img1 = document.createElement("img");
+                img1.src = "image.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "image2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "image3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+            } 
+            else if (experimentNumber === 2) {
+                let img1 = document.createElement("img");
+                img1.src = "no2.0.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "no2.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "no2.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+            }
+            else if (experimentNumber === 3) {
+                let img1 = document.createElement("img");
+                img1.src = "3.0.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "3.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "3.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "3.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+            }
+            else if (experimentNumber === 4) {
+                let img1 = document.createElement("img");
+                img1.src = "4.0.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "4.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "4.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "4.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+            }
+            else if (experimentNumber === 5) {
+                let img1 = document.createElement("img");
+                img1.src = "5.0.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "5.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "5.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "5.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+                let img5 = document.createElement("img");
+                img5.src = "5.4.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img5);
+                let img6 = document.createElement("img");
+                img6.src = "5.5.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img6);
+            }
+            else if (experimentNumber === 6) {
+                let img1 = document.createElement("img");
+                img1.src = "6.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "6.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "6.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "6.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+                let img5 = document.createElement("img");
+                img5.src = "6.4.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img5);
+                let img6 = document.createElement("img");
+                img6.src = "6.5.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img6);
+                let img7 = document.createElement("img");
+                img7.src = "6.6.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img7);
+                let img8 = document.createElement("img");
+                img8.src = "6.7.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img8);
+            }
+            else if (experimentNumber === 7) {
+                let img1 = document.createElement("img");
+                img1.src = "7.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "7.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "7.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "7.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+                let img5 = document.createElement("img");
+                img5.src = "7.4.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img5);
+                let img6 = document.createElement("img");
+                img6.src = "7.5.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img6);
+                let img7 = document.createElement("img");
+                img7.src = "7.6.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img7);
+                
+            }
+            else if (experimentNumber === 8) {
+                let img1 = document.createElement("img");
+                img1.src = "8.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "8.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "8.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "8.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+                let img5 = document.createElement("img");
+                img5.src = "8.4.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img5);
+                let img6 = document.createElement("img");
+                img6.src = "8.5.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img6);              
+            }
+            else if (experimentNumber === 9) {
+                let img1 = document.createElement("img");
+                img1.src = "9.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "9.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "9.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "9.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+                let img5 = document.createElement("img");
+                img5.src = "9.4.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img5);
+                let img6 = document.createElement("img");
+                img6.src = "9.5.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img6);
+                let img7 = document.createElement("img");
+                img7.src = "9.6.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img7);          
+            }
+            else if (experimentNumber === 10) {
+                let img1 = document.createElement("img");
+                img1.src = "10.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "10.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "10.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "10.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);         
+            }
+            else if (experimentNumber === 11) {
+                let img1 = document.createElement("img");
+                img1.src = "11.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "11.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "11.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);           
+            }else if (experimentNumber === 12) {
+                let img1 = document.createElement("img");
+                img1.src = "12.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "12.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "12.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "12.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);        
+            }
+            else if (experimentNumber === 13) {
+                let img1 = document.createElement("img");
+                img1.src = "13.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "13.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "13.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "13.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+                let img5 = document.createElement("img");
+                img5.src = "13.4.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img5);       
+            }
+            else if (experimentNumber === 14) {
+                let img1 = document.createElement("img");
+                img1.src = "14.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img1);
+
+                let img2 = document.createElement("img");
+                img2.src = "14.1.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img2);
+
+                let img3 = document.createElement("img");
+                img3.src = "14.2.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img3);
+                let img4 = document.createElement("img");
+                img4.src = "14.3.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img4);
+                let img5 = document.createElement("img");
+                img5.src = "14.4.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img5);
+                let img6 = document.createElement("img");
+                img6.src = "14.5.jpeg"; // Update the path accordingly
+                experimentImageDiv.appendChild(img6);             
+            }else {
+                let img = document.createElement("img");
+                img.src = `experiment${experimentNumber}.jpg`; // Assuming other image files are named experiment2.jpg, etc.
+                experimentImageDiv.appendChild(img);
+            }
+
+            experimentImageDiv.style.display = 'flex';
+        }
+
+        // Initialize the experiment buttons on page load
+        showExperiments();
+    </script>
+</body>
+</html>
